@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'TSTARBold';
+    src: url("TSTAR-BoldWeb.eot");
+    src: url("TSTAR-BoldWeb.eot") format("eot"),
+         url("TSTAR-BoldWeb.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARBoldItalic';
+    src: url("TSTAR-BoldItalicWeb.eot");
+    src: url("TSTAR-BoldItalicWeb.woff") format("eot"),
+         url("TSTAR-BoldItalicWeb.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARHeavy';
+    src: url('TSTAR-HeavyWeb.eot');
+    src: url('TSTAR-HeavyWeb.eot') format('eot'),
+         url('TSTAR-HeavyWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARItalic';
+    src: url('TSTAR-ItalicWeb.eot');
+    src: url('TSTAR-ItalicWeb.eot') format('eot'),
+         url('TSTAR-ItalicWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARLight';
+    src: url('TSTAR-LightWeb.eot');
+    src: url('TSTAR-LightWeb.eot?iefix') format('eot'),
+         url('TSTAR-LightWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARLightItalic';
+    src: url('TSTAR-LightItalicWeb.eot');
+    src: url('TSTAR-LightItalicWeb.eot') format('eot'),
+         url('TSTAR-LightItalicWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARMedium';
+    src: url('TSTAR-MediumWeb.eot');
+    src: url('TSTAR-MediumWeb.eot') format('eot'),
+         url('TSTAR-MediumWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARMediumItalic';
+    src: url('TSTAR-MediumItalicWeb.eot');
+    src: url('TSTAR-MediumItalicWeb.eot') format('eot'),
+         url('TSTAR-MediumItalicWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TSTARRegular';
+    src: url('TSTAR-RegularWeb.eot');
+    src: url('TSTAR-RegularWeb.eot') format('eot'),
+         url('TSTAR-RegularWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,52 @@
+@media (max-device-width: 1280px) {
+    .scrollIcon {
+        display: none;
+    }
+    a.fake_play,
+    a.fake_pause {
+        display: block;
+        opacity: 0;
+        text-indent: -999px;
+        overflow: hidden;
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: 1;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 98%;
+        background: none!important;
+    }
+    .intro .title_card .scrollIcon {
+        display: none;
+    }
+    .intro.row {
+        height: auto;
+        overflow: hidden!important;
+        position: relative;
+        padding-bottom: 75px;
+    }
+    .module {
+        z-index: auto!important;
+        position: relative!important;
+    }
+    .intro .title_card {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: 512px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+    }
+    .intro .intro_text {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 75px;
+        opacity: 1;
+    }
+}

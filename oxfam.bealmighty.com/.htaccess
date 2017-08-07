@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Protected Area"
+AuthUserFile /www/docs/oxfam.bealmighty.com/.htpasswd
+Require valid-user
