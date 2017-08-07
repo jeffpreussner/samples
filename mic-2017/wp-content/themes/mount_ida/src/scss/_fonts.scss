@@ -1,0 +1,114 @@
+@import url("//hello.myfonts.net/count/339f93");
+
+@font-face {
+    font-family: 'BrushUpToo';
+    // src: url('../fonts/brushup/339F93_0_0.eot');
+    src: url('../fonts/brushup/339F93_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/brushup/339F93_0_0.woff2') format('woff2'),
+    url('../fonts/brushup/339F93_0_0.woff') format('woff'),
+    url('../fonts/brushup/339F93_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BrushUp';
+    // src: url('../fonts/brushup/339F93_1_0.eot');
+    src: url('../fonts/brushup/339F93_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/brushup/339F93_1_0.woff2') format('woff2'),
+    url('../fonts/brushup/339F93_1_0.woff') format('woff'),
+    url('../fonts/brushup/339F93_1_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon.eot?2v7ogw');
+  src:  url('../fonts/icomoon/icomoon.eot?2v7ogw#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?2v7ogw') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?2v7ogw') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?2v7ogw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/League_Gothic-webfont.eot#') format('eot'),
+        url('../fonts/League_Gothic-webfont.woff') format('woff'),
+        url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+        url('../fonts/League_Gothic-webfont.svg#webfontFHzvtkso') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  span{display: none;}
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-smudge:before {
+  content: "\e90c";
+}
+.icon-close2:before {
+  content: "\e90a";
+}
+.icon-caution:before {
+  content: "\e90b";
+}
+.icon-quote:before {
+  content: "\e909";
+}
+.icon-arrow:before {
+  content: "\e907";
+}
+.icon-fb:before {
+  content: "\e900";
+}
+.icon-menu:before {
+  content: "\e901";
+}
+.icon-ig:before {
+  content: "\e902";
+}
+.icon-mic:before {
+  content: "\e908";
+}
+.icon-search:before {
+  content: "\e903";
+}
+.icon-tw:before {
+  content: "\e904";
+}
+.icon-close:before {
+  content: "\e905";
+}
+.icon-yt:before {
+  content: "\e906";
+}
+.icon-calendar:before {
+  content: "\e90e";
+}
+.icon-phone:before {
+  content: "\e90d";
+}
+.icon-envelope:before {
+  content: "\e90f";
+}
+.icon-location:before {
+  content: "\e910";
+}

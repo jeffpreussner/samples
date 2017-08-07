@@ -1,0 +1,114 @@
+.ie9{
+	.school-menu{
+		// min-height: 700px;
+		position: relative;
+		.school-slide{
+			// min-height: 700px;
+			.scool-nav{
+				@include display(flex);
+			}
+			.close{
+			}
+
+			&.active{
+				display: block!important;
+			}
+
+			&.default{
+			}
+			&:not(.default){
+
+			}
+
+			.school-supporting-text{
+			}
+
+			.mobile-title{
+			}
+
+			.school-title{
+
+			}
+
+			.school-image{
+				img{
+
+				}
+			}
+
+			.school-wrapper{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+				.school-aligner{
+					/* flexibility-disable */
+					width: 100%;
+					height: 100%;
+					max-width: $max_width;
+					display: table;
+					.span12{
+						/* flexibility-disable */
+						display: table-cell;
+						vertical-align: middle;
+						padding: 0 10%;
+
+					}
+
+					.school-content{
+						/* flexibility-disable */
+						@include flex-direction(column);
+						@include column(8);
+						@include offset(2);
+						.btn-container{
+							text-align: center;
+							margin-top: $gutter;
+						}
+						.btn{
+							margin-top: 65px;
+							@media(max-width: $bp_mobile_px){
+								margin-top: 34px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*****************************************************/
+	/*************FACTS MODULE SCSS***********************/
+	/*****************************************************/
+
+	.facts{
+		.container{
+			display: block;
+			padding-bottom: 60px;
+			clear: both;
+			.facts-title{
+				width: auto;
+			}
+
+			.fact-wrapper{
+				@include container;
+				display: table;
+				clear: both;
+				.fact{
+					display: block;
+					float: left;
+					width: 25%;
+				}
+			}
+		}
+	}
+
+
+
+//end ie9
+}

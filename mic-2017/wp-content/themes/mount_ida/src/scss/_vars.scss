@@ -1,0 +1,628 @@
+
+/* ----------------------------------------------------
+| TABLE OF CONTENTS
+| -----------------------------------------------------
+| 1. Widths, Breakpoints & Grid
+| 2. Color Palette & Fonts
+| 3. Brushups
+| 4. Forms
+| 5. Buttons & Links
+| 6. Miscellaneous
+|--------------------------------------------------- */
+
+
+/* ----------------------------------------------------
+| 1. Widths, Breakpoints & Grid
+|--------------------------------------------------- */
+
+$max-width: 1280px; //match psds
+$nav-offset: 75px;
+$footer-height: 294px;
+
+// Flex Grid Vars
+$gutter: 25px;
+$columns: 12;
+$columnlimit: 12;
+
+$mobile-gutter: 16px;
+$mobile-columns: 4;
+$mobile-columnlimit: 4;
+
+//Breakpoints - based on max-width
+$bp_mobile_px: 920px;
+$bp_tablet_px: 1024px;
+$bp_desktop_px: 1280px;
+// $desktop-sm-break-point: 1280px;
+$desktop-sm-break-point: $bp_mobile_px+1;
+
+@mixin container {
+    max-width: $max-width;
+    margin: 0 auto;
+    &:after,
+		&:before {
+        content: " ";
+        display: table;
+    }
+    @media(max-width: $max-width){
+        margin: 0 auto;
+        width: calc(100% - #{$mobile-gutter});
+    }
+}
+
+@mixin grid-collapse {
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+    max-width: $max-width;
+    @media(max-width: $bp_mobile_px){
+        margin-left: -$mobile-gutter;
+        margin-right: -$mobile-gutter;
+        max-width: 100%;
+    }
+}
+
+@mixin gutter-collapse {
+    padding-left:0!important;
+    padding-right: 0!important;
+    width: 100%!important;
+}
+
+@mixin grid-container {
+    box-sizing: border-box;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    // margin-left: -$gutter/2;
+    // margin-right: -$gutter/2;
+    @media(max-width: $bp_mobile_px){
+        margin-left: 0;
+        margin-right:  0;
+    }
+}
+
+$push: 1;
+$space:0;
+$offset:0;
+$push: 1;
+$space:0;
+$offset:0;
+
+@mixin column($columns){
+    @include display(flex);
+    @include flex-direction(column);
+    @include flex-grow(0);
+    @include flex-shrink(0);
+    $colWidth: #{$columns}/#{$columnlimit}*100%;
+    // width: calc(#{$colWidth} - #{$gutter});
+    width: calc(#{$colWidth});
+
+    justify-content: space-between;
+    padding: 0 $gutter/2;
+    @media(max-width: $bp_mobile_px){
+        $mobile-colWidth: #{$columns}/#{$mobile-columnlimit}*100%;
+        width: calc(#{$mobile-colWidth} - #{$mobile-gutter});
+        padding: 0 $mobile-gutter/2;
+
+    }
+}
+
+@mixin offset($offset){
+    @if $offset == 0 {
+        margin-left: $gutter/2;
+        @media(max-width: $bp_mobile_px){
+            margin-left: $mobile-gutter/2;
+        }
+    } @else{
+        $offsetWidth: #{$offset}/#{$columnlimit}*100%;
+        margin-left: calc(#{$offsetWidth} - #{$gutter/2});
+        @media(max-width: $bp_mobile_px){
+            $mobile-offsetWidth: #{$offset}/#{$mobile-columnlimit}*100%;
+            margin-left: calc(#{$mobile-offsetWidth} - #{$mobile-gutter/2});
+        }
+    }
+}
+
+
+/* ----------------------------------------------------
+| 2. Color Palette & Fonts
+|--------------------------------------------------- */
+
+$mic-green: #277d0c;
+$mic-light-green: #64b817;
+$off-white: #f2f2f2;
+$white: #ffffff;
+$light-gray: #d7d7d7;
+$medium-gray: #848484;
+$dark-gray: #5b5b5b;
+$black: #262626;
+$error-red: #d0011b;
+$schoolyellow: #f2ce25;
+
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-stretch: normal;
+$font-size: 12px;
+$line-height: 1;
+$font-face: 'Montserrat';
+
+//$font-style, $font-variant, $font-weight, $font-stretch, $font-size, $line-height, $font-face
+@mixin font($font-style, $font-variant, $font-weight, $font-stretch, $font-size, $line-height, $font-face ){
+    font: $font-style $font-weight $font-stretch $font-size $font-face;
+    line-height:  $line-height;
+}
+
+@mixin heading-1 {
+    @include font(normal, normal, bold, normal, 58px, 1.14, Montserrat );
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 36px, 1.22, Montserrat );
+    }
+}
+
+@mixin heading-2 {
+    @include font(normal, normal, bold, normal, 46px, 1.17, Montserrat );
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 30px, 1.33, Montserrat );
+    }
+}
+
+@mixin heading-3 {
+    @include font(normal, normal, bold, normal, 34px, 1.18, Montserrat );
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 25px, 1.28, Montserrat );
+    }
+}
+
+@mixin heading-4 {
+    @include font(normal, normal, bold, normal, 26px, 1.31, Montserrat );
+	letter-spacing: 2.2px;
+    text-transform: uppercase;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 18px, 1.44, Montserrat );
+        letter-spacing: 1.5px;
+    }
+}
+
+@mixin heading-5 {
+    @include font(normal, normal, normal, normal, 26px, 1.31, Georgia );
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 23px, 1.25, Georgia );
+    }
+}
+
+@mixin georgia-19 {
+    @include font(italic, normal, normal, normal, 19px, 1.26, Georgia );
+    @media(max-width: $bp_mobile_px){
+        @include font(italic, normal, normal, normal, 16px, 1.5, Georgia );
+    }
+}
+
+@mixin tertiary {
+    @include font(normal, normal, normal, normal, 18px,  1.56, Montserrat );
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 17px,  1.65, Montserrat );
+    }
+}
+
+@mixin italicbody {
+    @include font(italic, normal, 300, normal, 18px,  1.56, Montserrat );
+    @media(max-width: $bp_mobile_px){
+        @include font(italic, normal, 300, normal, 18px,  1.33, Montserrat );
+    }
+}
+
+@mixin heading-6 {
+    @include font(normal, normal, bold, normal, 16px,  1.5, Montserrat );
+	letter-spacing: 1.5px;
+    text-transform: uppercase;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 15px,  1.53, Montserrat );
+        letter-spacing: 1.4px;
+    }
+}
+
+@mixin blockquote {
+    @include font(normal, normal, normal, normal, 40px, 1.25, Georgia );
+    letter-spacing: 1.1px;
+    text-align: center;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 32px, 1.19, Georgia );
+        letter-spacing: 0.9px;
+    }
+}
+
+@mixin p {
+    @include font(normal, normal, 300, normal, 18px, 1.56, Montserrat );
+    line-height: 1.33;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, 300, normal, 18px, 1.33, Montserrat );
+    }
+}
+
+@mixin list-item{
+    @include p;
+    position: relative;
+    padding-left: 15px;
+    list-style-type: none;
+    @include flex(0 0 50%);
+    @media(max-width: $bp_mobile_px){
+        @include flex(0 0 100%);
+    }
+    &:before {
+        content: "•";
+        padding-right: 15px;
+        color: $mic-light-green;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+}
+
+@mixin bold-p {
+    @include font(normal, normal, bold, normal, 18px, 1.56, Montserrat );
+    line-height: 1.33;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 18px, 1.33, Montserrat );
+    }
+}
+
+@mixin sm {
+    @include font(normal, normal, normal, normal, 15px, 1.65, Montserrat );
+    padding: 7px 34px;
+}
+
+@mixin normalizefonts {
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+/* ----------------------------------------------------
+| 3. Brushups
+|--------------------------------------------------- */
+
+@mixin brushup-large {
+    @include font(normal, normal, normal, normal, 225px, normal, BrushUp );
+	letter-spacing: -0.3px;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 120px, normal, BrushUp );
+		letter-spacing: -0.1px;
+    }
+}
+
+@mixin brushuptoo-large {
+    @include font(normal, normal, normal, normal, 225px, .94, BrushUpToo );
+	letter-spacing: -0.3px;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 120px, .94, BrushUpToo );
+        letter-spacing: -0.1px;
+    }
+}
+
+@mixin brushup-small {
+    @include font(normal, normal, normal, normal, 145px, .94, BrushUp );
+	letter-spacing: -0.2px;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 68px, .94, BrushUp );
+            letter-spacing: -0.1px;
+            letter-spacing: -1.2px;
+        }
+}
+
+@mixin brushuptoo-xsmall {
+    @include font(normal, normal, normal, normal, 110px, normal, BrushUpToo );
+	letter-spacing: -0.1px;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 90px, normal, BrushUpToo );
+		letter-spacing: -0.1px;
+    }
+}
+
+@mixin brushuptoo-small {
+    @include font(normal, normal, normal, normal, 145px, .94, BrushUpToo );
+	letter-spacing: -0.2px;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, normal, normal, 75px, .94, BrushUpToo );
+        letter-spacing: -0.1px;
+    }
+}
+
+
+/* ----------------------------------------------------
+| 4. Forms
+|--------------------------------------------------- */
+
+@mixin form-input($font-size: 15px) {
+    @include font(normal, normal, normal, normal, $font-size, 1.47, Montserrat );
+    color: $black;
+    @media(max-width: $bp_mobile_px) {
+        @include font(normal, normal, normal, normal, $font-size, 1.47, Montserrat );
+    }
+}
+
+@mixin form-label {
+    @include font(normal, normal, bold, normal, 16px, 1, Montserrat );
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    @media(max-width: $bp_mobile_px){
+        @include font(normal, normal, bold, normal, 16px, 1, Montserrat );
+        letter-spacing: 1.5px;
+    }
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content};
+    :-moz-placeholder           {@content};
+    ::-moz-placeholder          {@content};
+    :-ms-input-placeholder      {@content};
+}
+
+@mixin userselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@mixin mic-select {
+  height: 50px;
+  border-radius: 0;
+  @include appearance(none);
+  background: $white;
+  border: solid 1px #e0e0e0;
+  // NOT IN STYLEGUIDE
+  outline: none;
+  background: $white url('../img/global/mobileselect.png') right center no-repeat;
+  background-size: auto 100%;
+  @include form-input(16px);
+//    text-transform: capitalize;
+//     font-family: Georgia;
+//     color: $medium-gray;
+//     font-style: italic;
+//     font-size: 14px;
+
+  &:focus {
+    border: 1px solid $mic-light-green!important;
+  }
+}
+
+// remove select browser elements on ie10 +
+select::-ms-expand {
+  display: none;
+}
+
+// remove select browser element on ie9
+.ie-styled-select {
+    overflow: hidden;
+    width: 100%;
+    border: solid 1px #e0e0e0;
+}
+
+.ie-styled-select select {
+    border: 0px none;
+    background-position: 95% center !important;
+    width: 105% !important;
+}
+
+.ie9 body#events .ie-styled-select select {
+    width: 70% !important;
+}
+
+
+/* ----------------------------------------------------
+| 5. Buttons & Links
+|--------------------------------------------------- */
+
+@mixin btn {
+    @include font(normal, normal, bold, normal, 16px, 1.65, Montserrat );
+	letter-spacing: normal;
+	text-decoration: none;
+	cursor: pointer;
+    position: relative;
+    overflow: hidden;
+     span{
+        position: relative;
+        z-index: 2;
+        @include transition(all .3s);
+    }
+      @include transition(all .3s);
+
+  @include transition(all .3s);
+    &:before{
+        content: " ";
+        @include transition(all .3s);
+        position: absolute;
+    }
+}
+
+@mixin solid-green {
+    background: $mic-green;
+    padding: 15px $gutter*2;
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid  $mic-green;
+    span{
+        color: $white;
+    }
+    &:before{
+        height: 100%;
+        width: 0%;
+        left:0%;
+        top: 0;
+        z-index: 1;
+        display: block;
+        background: $mic-light-green;
+    }
+    &:hover{
+        border: 1px solid  $mic-light-green;
+        &:before{
+            left:0%;
+            width: 100%;
+
+        }
+    }
+}
+
+@mixin solid-white {
+    background: $white;
+    padding: 15px $gutter*2;
+    text-align: center;
+    color: $mic-green;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid $white;
+    span{
+        color: $mic-green;
+    }
+    &:before{
+        height: 100%;
+        width: 0%;
+        left:0%;
+        top: 0;
+        z-index: 1;
+        display: block;
+        background: $off-white;
+    }
+    &:hover{
+        &:before{
+            left:0%;
+            width: 100%;
+        }
+    }
+}
+
+@mixin text-link {
+    color: rgba(45, 45, 45, 0.8);
+    background: transparent;
+    border-bottom: 3px solid rgba(100, 184, 23, 0.3);
+    overflow: visible;
+    font-weight: 500;
+    display: inline;
+    span{
+        font-weight: 500;
+    }
+    &.light{
+        color: $white;
+    }
+
+    &:before {
+		position: absolute;
+		transition: .3s;
+		content: '';
+		width: 0%;
+		left: 0%;
+		bottom: -3px;
+		height: 3px;
+		background: $mic-light-green;
+	}
+	&:hover {
+		cursor: pointer;
+		&:before {
+		    width: 100%;
+		    left: 0%;
+		}
+	}
+}
+
+@mixin outlined-green {
+    background: transparent;
+    padding: 15px $gutter*2;
+    text-align: center;
+    color: $mic-green;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid $mic-green;
+    span{
+        color: $mic-green;
+    }
+    &:before {
+        position: absolute;
+        transition: .3s;
+        content: '';
+        height: 100%;
+        width: 100%;
+        left: -100%;
+        background: $mic-green;
+        top: 0;
+    }
+    &:hover {
+        &:before {
+            left: 0%;
+        }
+        box-shadow: inset 0px 0px 0px 2px $mic-light-green;
+        span{
+            color: $white;
+        }
+        border: 1px solid $mic-green;
+    }
+}
+
+@mixin outlined-white {
+    background: transparent;
+    padding: 15px $gutter*2;
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255, 255, 1);
+    span{
+        color: $white;
+    }
+    &:before {
+        position: absolute;
+        transition: .3s;
+        content: '';
+        height: 100%;
+        width: 100%;
+        left: -100%;
+        background: rgba(255,255, 255, 0.1);
+        top: 0;
+    }
+    &:hover {
+        &:before {
+            left: 0%;
+        }
+        box-shadow: inset 0px 0px 0px 2px rgba(255,255, 255, 0.5);
+        border: 1px solid rgba(255,255, 255, .5);
+    }
+}
+
+
+/* ----------------------------------------------------
+| 6. Miscellaneous
+|--------------------------------------------------- */
+
+@mixin border {
+    border: 1px solid red;
+}
+
+@mixin line-break {
+  max-width: $max-width;
+  width: 100%;
+  @include margin(50px auto);
+  border: 0;
+  border-bottom: solid 1px #ebebeb;
+}
+
+@mixin absbg {
+    width: 100%;
+    height: 100%;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@mixin zero {
+    margin: 0;
+    padding: 0;
+}

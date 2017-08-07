@@ -1,0 +1,253 @@
+body#singleFacultyStaff {
+	section#faculty-staff{
+		position: relative;
+		@include justify-content(center);
+		@include align-items(center);
+		margin-bottom: $gutter*4;
+		@media(max-width: $bp_mobile_px) {
+		  	margin-bottom: $gutter;
+		}
+
+		.breadcrumb {
+		  font-family: Montserrat;
+		  font-weight: bold;
+		  padding: $gutter*3 0 0 $gutter*3;
+		  font-size: $gutter/2;
+
+		  a {
+		    color: $mic-green;
+		  }
+
+		  span {
+		    color: $medium-gray;
+		    padding: 0 $gutter/2;
+		  }
+
+		  span:last-child {
+		    color: $black;
+		    padding: 0;
+		  }
+		  @media(max-width: $bp_mobile_px) {
+		    display: none;
+		  }
+		}
+
+		.container{
+			@include container;
+			@include grid-container;
+			/* flexibility-disable */
+			@include column(8);
+			max-width: 1280px;
+			margin: auto;
+			padding: $gutter*2 0 0;
+			@include align-self(center);
+			@media(max-width: $bp_mobile_px) {
+				@include column(4);
+				margin: auto;
+			}
+
+			.faculty-staff-content{
+				text-align: center;
+				@media(max-width: $bp_mobile_px){
+					padding: $gutter*2 $gutter/2 0;
+					width: 100%;
+				}
+
+				.heading-info{
+					@include column(9);
+					margin: auto;
+					@media(max-width: $bp_mobile_px) {
+						@include column(4);
+					}
+					.img-mask2{
+						@include imgmask;
+						max-width: 240px;
+						display: block;
+						margin: 0 auto;
+						@media(max-width: $bp_mobile_px){
+							max-width: 100%;
+						}
+						&:before{
+							background-image: url(../img/global/image-mask-circle-neg@2x.png);
+						}
+					}
+
+
+					.img-mask{
+						max-width: 240px;
+						display: block;
+						margin: 0 auto;
+					}
+
+					h3{
+						@include heading-2;
+						line-height: 1.75;
+						@media(max-width: $bp_mobile_px) {
+							padding-bottom: $gutter/2;
+						}
+					}
+
+					.supporting-text{
+						@include font(italic, normal, normal, normal, 30px, 1.26, Georgia );
+						color: $medium-gray;
+						@media(max-width: $bp_mobile_px) {
+							font-size: 23px;
+						}
+					}
+				}
+				.faculty-info{
+					padding: $gutter*2 0 $gutter;
+					margin: auto;
+				}
+				.education{
+					padding-right: $gutter*3;
+					float: left;
+					@media(max-width: $bp_mobile_px) {
+						padding-right: 0;
+					}
+					p{
+						padding-bottom: $gutter;
+					}
+				}
+				.contact{
+					padding-left: $gutter;
+					float:left;
+					@media(max-width: $bp_mobile_px) {
+						padding-left: 0;
+						padding-top: 25px;
+					}
+					&.single{
+						float: none;
+						width: 100%;
+						padding-left: 0;
+						text-align: center;
+					}
+				}
+				.education, .contact{
+					width: 50%;
+					text-align: left;
+					//float: left;
+					@media(max-width: $bp_mobile_px) {
+						//float: none;
+						text-align: center;
+						width: 100%;
+					}
+					h2 {
+					  @include heading-6;
+					  color: $medium-gray;
+					  letter-spacing: 2px;
+					  padding-bottom: 15px;
+					  @media(max-width: $bp_mobile_px) {
+					    padding-bottom: $gutter/2;
+					    font-size: 18px;
+					  }
+					}
+					.icon-phone, .icon-envelope, .icon-location{
+						padding-bottom: $gutter;
+					    font-size: $gutter;
+					    color: $medium-gray;
+					    a, p{
+					    	font-color: $black;
+					        font-size: 18px;
+					        margin-left: 25px;
+					        font-family: Montserrat;
+					        text-decoration: none;
+					        @media(max-width: $bp_mobile_px) {
+					        	margin-left: 0;
+					        }
+					    }
+					}
+					.icon-phone:before, .icon-envelope:before{
+						@media(max-width: $bp_mobile_px) {
+							display: none;
+						}
+					}
+					.icon-phone{
+					    a{
+					        letter-spacing: 1.5px;
+					    }
+					}
+					.icon-envelope{
+						font-size: 17px;
+					    a{
+					        border-bottom: solid 3px rgba(100, 184, 23, 0.3);
+					    }
+					}
+					.icon-location{
+						/* flexibility-disable */
+						display: inline-flex;
+						p{
+							color: $black;
+							font-size: 18px;
+							margin-left: 25px;
+							font-family: Montserrat;
+							text-decoration: none;
+							@media(max-width: $bp_mobile_px) {
+								margin-left: 8px;
+							}
+						}
+					}
+				}
+				.staff-info{
+					clear: both;
+					.column{
+						text-align: center;
+						h2 {
+							text-align: center;
+						}
+					}
+				}
+				.email{
+			        display: inline-block;
+			        p{
+			          text-decoration: none;
+			          border-bottom: solid 3px rgba(100, 184, 23, 0.3);
+			        }
+			    }
+			}
+
+			hr{
+				border-top: 1px dotted $dark-gray;
+				clear: both;
+				@media(max-width: $bp_mobile_px) {
+					margin-right: -200px;
+					margin-left: -200px;
+				}
+			}
+			.bio {
+				padding: $gutter 0;
+				p {
+					@include tertiary;
+				  	padding-bottom: $gutter;
+				  	
+				}
+
+				blockquote p {
+				  	text-align: center;
+				  	color: $dark-gray;
+				  	font-size: 40px;
+				  	font-family: Georgia;
+				  	margin-bottom: $gutter/2;
+				  	@media(max-width: $bp_mobile_px) {
+				    	margin: auto;
+				    	font-size: 26px;
+				  	}
+
+				  	&:after,
+				  	&:before {
+				    	content: "\e909";
+				    	display: block;
+				    	@include font(normal, normal, normal, normal, 50px, 1 ,'icomoon' !important);
+				    	speak: none;
+				    	padding: $gutter*2;
+				    	color: $mic-green;
+				  	}
+
+				  	&:after {
+				    	transform: rotate(180deg);
+				  	}
+				}
+			}
+		}
+	}
+}

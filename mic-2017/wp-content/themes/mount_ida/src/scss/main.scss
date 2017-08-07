@@ -1,0 +1,51 @@
+
+// Normalize CSS
+@import 'normalize';
+
+// Variables
+@import "vars";
+
+// Bourbon
+@import "bourbon/bourbon";
+
+// Vendor Libs
+@import "slick/slick";
+
+// Retina Images
+@import "retina";
+
+// Fonts, Base styles
+@import "fonts";
+@import "global";
+
+// Mixins for forms, pagination, pb modules
+@import "partials/forms";
+@import "partials/grad_modal";
+@import "partials/modules";
+@import "partials/pagination";
+
+// Nav, Footer, & Animations
+@import "foot";
+@import "animations/base_animations";
+@import "animations/animations_mixins";
+@import "nav";
+@import "ie/ie-nav.scss";
+
+// Pages
+@import "pages/searchResults";
+@import "pages/singleEvent";
+@import "pages/areaOfStudy";
+@import "pages/campusLife";
+@import "pages/departmentLanding";
+@import "pages/events";
+@import "pages/factsFigures";
+@import "pages/facultyListing";
+@import "pages/graduate";
+@import "pages/home";
+@import "pages/newsAndEvents";
+@import "pages/singleFacultyStaff";
+@import "pages/singleNews";
+@import "pages/the404";
+@import "ie";
+@import "pages/schoolLanding";
+@import "pages/pageBuilder";

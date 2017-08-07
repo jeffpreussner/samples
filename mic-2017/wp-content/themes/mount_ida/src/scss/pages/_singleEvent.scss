@@ -1,0 +1,218 @@
+body#singleEvent {
+       
+    section#events {
+        @include padding(60px 0);
+        ul, ol{
+           margin-bottom: $gutter*2;
+           li{
+            @include list-item;
+            }
+        }
+        .reducepadding{
+            padding-bottom: $gutter!important;
+        }
+    
+        .container {
+            max-width: $max-width;
+            width: 100%;
+            @include margin(0 auto);
+            @include align-self(center);
+            .event-wrapper{
+                /* flexibility-disable */
+                position: relative;
+                @include column(8);
+                max-width: $max-width;
+                @include align-self(center);
+                margin: $gutter*2 auto;
+                @media(max-width: $bp_mobile_px) {
+                    @include column(4);
+                }
+                .event-category {
+                    color: $medium-gray;
+                    text-align: center;;
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+                    @include font(normal, normal, bold, normal, 15px, 1.31, Montserrat );
+                    @media(max-width: $bp_mobile_px) {
+                        font-family: Montserrat;
+                        font-size: 15px;
+                        font-weight: bold;
+                        line-height: 1.31;
+                    }
+                }
+                .event-title {
+                    text-align: center;
+                    margin: auto;
+                    h3 {
+                        @include heading-2;
+                    }
+                    @media(max-width: $bp_mobile_px) {
+                        font-family: Montserrat;
+                        font-weight: bold;
+                        font-size: 30px;
+                        line-height: 1.33; 
+                    }
+                }
+                .social-share {
+                    margin: auto;
+                    text-align: center;
+                    padding: $gutter*2 0;
+                    @media(max-width: $bp_mobile_px) {
+                        padding: $gutter*2 0 $gutter;
+                    }
+                    a {
+                        color: $mic-light-green;
+                        font-size: $gutter;
+                        padding-right: 8px;
+                        @media(max-width: $bp_mobile_px) {
+                            font-size: 30px;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+                .event-content {
+                    .event-info{
+                        margin: $gutter 0 $gutter*2;
+                        @media(max-width: $bp_mobile_px) {
+                        text-align: center;
+                        }
+                     
+                        h6{
+                            @include form-label;
+                            @media(max-width: $bp_mobile_px) {
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 1;
+                                font-family: Montserrat;
+                                padding-bottom: $gutter/2;
+                            }
+                        }
+                        .event-date, .event-location{
+                            font-style: italic;
+                            font-size: $gutter;
+                            line-height: $gutter;
+                            font-family: Georgia;
+                            letter-spacing: 1.5px;
+                            padding: 16px 0;
+                        }
+                        .event-location{
+                            text-transform: capitalize;
+                            span{
+                                text-transform: uppercase;
+                            }
+                        }
+                        .icon-calendar{
+                            display: inline-block;
+                            color: $dark-gray;
+                            font-size: 20px;
+                            a{
+                                color: $dark-gray;
+                                font-family: Montserrat;
+                                font-size: 18px;
+                                border-bottom: solid 3px rgba(100, 184, 23, 0.3);
+                                letter-spacing: 1px;
+                                margin: 0 0 $gutter*2 $gutter/2;
+                            }
+                        }
+                    }
+                    p {
+                        color: $black;
+                        letter-spacing: 0.7px;
+                        font-size: 18px;
+                        padding-bottom: $gutter*2;
+                        @media(max-width: $bp_mobile_px) {
+                            font-size: 20px;
+                        }
+                        img {
+                            float: left;
+                            width: 55%;
+                            overflow: hidden;
+                            margin: $gutter $gutter*2 $gutter*2 0;
+                            @media(max-width: $bp_mobile_px) {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .contact {
+                    float: left;
+                    margin-bottom: $gutter*2;
+                    @media(max-width: $bp_mobile_px) {
+                        text-align: center;
+                    }
+                    h2 {
+                        @include heading-6;
+                        color: $black;
+                        letter-spacing: 2px;
+                        padding-bottom: 15px;
+                        @media(max-width: $bp_mobile_px) {
+                            padding-bottom: $gutter;
+                            font-weight: bold;
+                            font-size: 15px;
+                            line-height: 1.53;
+                            font-family: Montserrat;
+                        }
+                    }
+                    p {
+                        font-family: Montserrat;
+                        margin-bottom: 15px;
+                    }
+                }
+                .icon-phone, .icon-envelope{
+                    font-size: 20px;
+                    float: left;
+                    display: inline-block;
+                    color: $medium-gray;
+                    a{
+                        font-size: 18px;
+                        margin-left: $gutter/2;
+                        margin-bottom: 15px;
+                        font-family: Montserrat;
+                        text-decoration: none;
+                    }
+                    @media(max-width: $bp_mobile_px) {
+                        float: none;
+                    }
+                }
+                .icon-phone{
+                    a{
+                        letter-spacing: 1.5px;
+                        @media(max-width: $bp_mobile_px) {
+                            border-bottom: solid 3px rgba(100, 184, 23, 0.3);
+                        }
+                    }
+                }
+                .icon-envelope{
+                    clear:both;
+                    a{
+                        border-bottom: solid 3px rgba(100, 184, 23, 0.3);
+                    }
+                }
+                .btn-container{
+                    clear: both;
+                    text-align: center;
+                }
+                .btn{
+                    clear:both;
+                    padding: 10px 65px;
+                    @media(max-width: $bp_mobile_px){
+                        font-weight: bold;
+                        font-size: 16px;
+                        line-height: 1.65;
+                        font-family: Montserrat;
+                        @include display(block);
+                        width:100%;
+                        padding: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    section#dates { 
+        @include dates;
+    }
+    
+}

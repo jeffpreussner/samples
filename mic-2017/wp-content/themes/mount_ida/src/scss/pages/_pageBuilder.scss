@@ -1,0 +1,282 @@
+/*****************************************************/
+/*****************************************************/
+/****************GENERAL PB STYLES********************/
+/*****************************************************/
+
+.pb.page-content{
+	// &:last-of-type {
+	// 	display: none;
+	// 	.full-width-promo,
+	// 	.stacked-promo{
+	// 		&.mask-bottom:before{
+	// 			@include absbg;
+	// 			background-image: none!important;
+	// 			background-size: 100% auto;
+	// 			background-repeat: no-repeat;
+	// 			background-position: center top;
+	// 			z-index: 1;
+	// 		}
+	// 	}
+	// }
+	section.pb-section {
+		@include display(block);
+		clear: both;
+
+		&.flex, &.image-grid{
+			/* flexibility-disable */
+			@include display(flex);
+		}
+		&.mask-bottom{
+			margin-bottom: -1px;
+		}
+
+		&:after{
+			content: " ";
+		}
+	}
+
+	.mask-top:before{
+		@include absbg;
+		background-image: url(../img/global/full_width_img_top_edge.png);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: center top;
+		z-index: 1;
+	}
+	.mask-bottom:before{
+		@include absbg;
+		background-image: url(../img/global/full_width_img_bottom_edge.png);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		z-index: 1;
+	}
+	.mask-top.mask-bottom:before{
+		@include absbg;
+		background-image: url(../img/global/full_width_img_top_edge.png),url(../img/global/full_width_img_bottom_edge.png);
+		background-size: 100% auto,100% auto;
+		background-repeat: no-repeat,no-repeat;
+		background-position: center top,center bottom;
+		z-index: 1;
+	}
+
+
+	.img-mask{
+		position: relative;
+		img{
+			width: 100%;
+			height: auto;
+			position: relative;
+			z-index: 0;
+			opacity: 0;
+		}
+		svg{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		svg image{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	.section-title{
+		color: $black;
+	}
+
+	.slick-dots{
+		position: absolute;
+		right: 127px;
+		bottom: 73px;
+		height: 10px;
+		width: 90px;
+		z-index: 3;
+		@media(max-width: $bp_mobile_px){
+			bottom: 178px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+		}
+
+		li{
+			display: inline-block;
+			margin: 0 0 0 16px;
+			@media(max-width: $bp_mobile_px){
+				margin: 0 0 0 24px;
+			}
+
+			&:first-child{
+				margin-left: 0px;
+			}
+
+			&.slick-active{
+				button{
+					background: $mic-green;
+				}
+			}
+
+			button{
+				width: 10px;
+				height: 10px;
+				@media(max-width: $bp_mobile_px){
+					width: 8px;
+					height: 8px;
+				}
+				border-radius: 50%;
+				@include zero;
+				border: none;
+				line-height: 30px;
+				overflow: hidden;
+				background: $white;
+				@include display(block);
+			}
+		}
+	}
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************FULL WIDTH HERO SCSS********************/
+	/*****************************************************/
+
+	&.form{
+		.container{
+			@include container;
+			
+			.row{
+				@include grid-container;
+			
+				.column{
+					@include column(8);
+					@include offset(2);
+					@media(max-width: $bp_mobile_px){
+						@include column(4);
+						@include offset(0);
+					}
+				}
+			}
+		}
+	}
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************FULL WIDTH HERO SCSS********************/
+	/*****************************************************/
+
+	.full-width-hero{
+		@include full-width-hero;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**************STACKED PROMO SCSS*********************/
+	/*****************************************************/
+
+	.stacked-promo{
+		@include stacked-promo;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**************STACKED FACULTY  SCSS******************/
+	/*****************************************************/
+
+	.stacked-faculty{
+		@include stacked-faculty;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**********FULL WIDTH CONTENT SCSS********************/
+	/*****************************************************/
+
+	.full-width-content{
+		@include full-width-content;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********ADDITIONAL LINKS SCSS*********************/
+	/*****************************************************/
+
+	.additional-links{
+		@include additional-links;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*****************************************************/
+	/*************FACTS MODULE SCSS***********************/
+	/*****************************************************/
+
+	.facts{
+		@include facts;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********IMAGE GRID MODULE SCSS********************/
+	/*****************************************************/
+
+	.image-grid{
+		@include image-grid;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************DATES MODULE SCSS***********************/
+	/*****************************************************/
+
+	.dates{
+		@include dates;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********FULL WIDTH PROMO SCSS*********************/
+	/*****************************************************/
+
+	.full-width-promo{
+		@include full-width-promo;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************SlIDESHOW  SCSS*************************/
+	/*****************************************************/
+
+	.slideshow {
+		@include slideshow;
+	}
+
+	/*****************************************************/
+	/*****************************************************/
+	/**************WYSIWYG CONTENT SCSS*******************/
+	/*****************************************************/
+
+	.wysiwyg-content{
+		@include wysiwyg-content;
+	}
+
+	/*****************************************************/
+	/*****************************************************/
+	/********************TABLE SCSS***********************/
+	/*****************************************************/
+
+	.table-section {
+		margin: 25px 0;
+	}
+}

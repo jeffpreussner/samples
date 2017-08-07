@@ -1,0 +1,631 @@
+/*****************************************************/
+/*****************************************************/
+/****************GENERAL PB STYLES********************/
+/*****************************************************/
+/*.mic__notification{
+	display: none;
+}*/
+.sl.page-content{
+	section.sl-section {
+		// @include display(block);
+		clear: both;
+		&:not(.mask-top){
+			// border-top: 1px solid $light-gray;
+		}
+
+		&.flex, &.image-grid{
+			@include display(flex);
+		}
+
+		&.mask-bottom{
+			margin-bottom: -1px;
+		}
+
+		&:after{
+			content: " ";
+		}
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************FULL WIDTH HERO SCSS********************/
+	/*****************************************************/
+
+	.full-width-hero {
+		@include full-width-hero;
+		/* flexibility-disable */
+		@include display(flex);
+		@include align-items(center);
+		.title{
+			@include heading-2;
+			color: $white;
+			position: relative;
+			width: 90%;
+			max-width: 665px;
+
+			span{
+				color: $white;
+				position: relative;
+				z-index: 1;
+			}
+			&.two-lines{
+			}
+		}
+	}
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********BLOCKQUOTE PROMO SCSS*********************/
+	/*****************************************************/
+
+	.blockquote-section{
+	@include blockquote-section;
+		@media(max-width: $bp_mobile_px){
+			//may want to remove this because it is not going to be consistant with pagebuilder pages
+			margin-top: $gutter*2;
+		}
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**********FACULTY SPOTLIGHT SCSS*********************/
+	/*****************************************************/
+
+	section.faculty-spotlight {
+		@include faculty-spotlight;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**************STACKED PROMO SCSS*********************/
+	/*****************************************************/
+
+	.stacked-promo{
+		@include stacked-promo;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**************STACKED FACULTY  SCSS******************/
+	/*****************************************************/
+
+	.stacked-faculty{
+		@include stacked-faculty;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/**********FULL WIDTH CONTENT SCSS********************/
+	/*****************************************************/
+
+	.full-width-content{
+		@include full-width-content;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********ADDITIONAL LINKS SCSS*********************/
+	/*****************************************************/
+
+	.additional-links{
+		@include additional-links;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*****************************************************/
+	/*************FACTS MODULE SCSS***********************/
+	/*****************************************************/
+
+	.facts{
+		@include facts;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********IMAGE GRID MODULE SCSS********************/
+	/*****************************************************/
+
+	.image-grid{
+		@include image-grid;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/*************DATES MODULE SCSS***********************/
+	/*****************************************************/
+
+	.dates{
+		@include dates;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/***********FULL WIDTH PROMO SCSS*********************/
+	/*****************************************************/
+
+	.full-width-promo{
+		@include full-width-promo;
+	}
+
+
+	/*****************************************************/
+	/*****************************************************/
+	/****************ALUMNI MENU SCSS*********************/
+	/*****************************************************/
+
+	.alumni-menu{
+		position: relative;
+
+		@media(min-width: $desktop-sm-break-point){
+			min-height: 800px;
+		}
+		@media(max-width: $bp_mobile_px){
+			margin-bottom: $gutter*2;
+		}
+
+
+		.default{
+			blockquote{
+
+				&:before,
+				&:after{
+					content: "\e909";
+					display: block;
+					@include font(normal, normal, normal, normal, 68px, 1 ,'icomoon' !important);
+					speak: none;
+
+				}
+				&:after{
+					transform: rotate(180deg);
+				}
+			}
+		}
+		.slick-dots{
+			text-align: center;
+			bottom: $gutter*2;
+			position: absolute;
+			width: 100%;
+			@media(max-width: $bp_mobile_px){
+				height: 8px;
+			}
+
+		}
+		.alumni-nav{
+			width: calc(50% - 25px);
+			min-width: 720px;
+			margin-left: $gutter;
+			position: absolute;
+			right: 0;
+			bottom: $gutter*3;
+			z-index: 3;
+			p{
+				color: $white;
+				margin-left: 0;
+				margin-bottom: $gutter;
+				width: 50%;
+				min-width: 400px;
+			}
+			@media(max-width: $bp_mobile_px){
+				display: none;
+			}
+			.nav-inner{
+				width: auto;
+				display: table;
+				/* flexibility-disable */
+				@include display(flex);
+				//@include justify-content(flex-end);
+				a{
+					display: table-cell;
+					float: left;
+					/* flexibility-disable */
+					@include flex(1);
+					background: rgba(0,0,0,1);
+					overflow: hidden;
+					height: 105px;
+					max-width: 230px;
+					display: block;
+					margin-left: 2px;
+					img{
+						height: auto;
+						width: 100%;
+						display: block;
+						@include transition(all .3s);
+					}
+					&.active{
+						img{opacity: .5;}
+					}
+				}
+			}
+		}
+
+		.alumni-slide{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			@media(max-width: $bp_mobile_px ){
+				position: relative;
+				height: auto;
+				width: 100%;
+				top: auto;
+				left: auto;
+				display: block;
+				padding-top: $gutter;
+				padding-bottom: $gutter*4;
+				min-height: 550px;
+			}
+
+			.close{
+				width: 28px;
+				height: 28px;
+				font-size: 28px;
+				color: $white;
+				top: 70px;
+				right: 70px;
+				position: absolute;
+				text-decoration: none;
+				z-index: 3;
+				@media(max-width: $bp_mobile_px ){
+					display: none;
+				}
+			}
+
+			&.active{
+				@include display(block);
+			}
+
+			.alumni-image{
+				img{
+					@include display(block);
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.alumni-wrapper{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+				.alumni-aligner{
+					/* flexibility-disable */
+					display: block;
+					@include container;
+					@include display(flex);
+					@include align-self(center);
+					@include flex( 0 0 100%);
+					height: 100%;
+					.column{
+						/* flexibility-disable */
+						display: block;
+						@include display(flex);
+						@include column(5);
+						@include offset(1);
+						z-index: 1;
+						@media(max-width: $bp_tablet_px){
+							@include column(7);
+							@include offset(1);
+						}
+						@media(max-width: $bp_mobile_px){
+							@include column(4);
+							@include grid-collapse;
+							display: block;
+						}
+					}
+
+					.alumni-content{
+						/* flexibility-disable */
+						display: block;
+						@include display(flex);
+						@include flex-direction(column);
+						@include justify-content(center);
+						@include align-items(center);
+						margin: 0 auto;
+						max-width: 626px;
+						blockquote{
+							color: $white;
+							text-align: left;
+							display: block;
+							@media(max-width: $bp_mobile_px){
+								margin-left: $mobile-gutter;
+							}
+							&:before{
+								text-align: left;
+								margin-bottom: $gutter*2;
+							}
+							&:after{
+								text-align: right;
+								margin-top: $gutter*2;
+							}
+							@media(max-width: $bp_mobile_px){
+								&:before{
+									margin-bottom: $gutter;
+									margin-top: -$gutter;
+								}
+								&:after{
+									margin-top: $gutter;
+								}
+							}
+						}
+						cite{
+							margin-top: $gutter*2;
+							text-align: left;
+							display: block;
+							@include heading-6;
+							color: $white;
+							width: 100%;
+							@media(max-width: $bp_mobile_px){
+								margin-top: $gutter*5;
+								margin-left: $mobile-gutter;
+							}
+
+						}
+						.small{
+							@include georgia-19;
+							color: $white;
+							display: block;
+							width: 100%;
+							@media(max-width: $bp_mobile_px){
+								padding-bottom: $gutter;
+								margin-left: $mobile-gutter;
+							}
+
+						}
+						// .btn{
+						// 	margin-top: 65px;
+						// 	@media(max-width: $bp_mobile_px){
+						// 		margin-top: 34px;
+						// 	}
+						// }
+					}
+				}
+			}
+			&.default{
+				width: 100%;
+				height: auto;
+				position: relative;
+				top: auto;
+				left: auto;
+				@include display(block);
+				.column{opacity: 0;}
+				&.active{
+					.column{
+						opacity: 1;
+						blockquote{
+							font-size: 52px;
+							line-height: 1.15;
+							letter-spacing: .5px;
+							@media(max-width: $bp_mobile_px){
+								font-size: 36px;
+								line-height: 1.17;
+								letter-spacing: 1px;
+							}
+						}
+					}
+				}
+
+			}
+			&:not(.default){
+					.alumni-wrapper{
+						.column{
+							padding-top: $gutter*4;
+						}
+
+						@media(max-width: $bp_mobile_px){
+							.column{
+								padding-top: $gutter*2;
+							}
+					}
+				}
+			}
+		}
+	}
+
+
+
+/*****************************************************/
+/*****************************************************/
+/*************SlIDESHOW  SCSS*************************/
+/*****************************************************/
+
+	.slideshow {
+		@include slideshow;
+		@media(max-width: $bp_mobile_px){
+			//may want to remove this because it is not going to be consistant with pagebuilder pages
+			margin-top: $gutter*2;
+		}
+	}
+}
+
+//school specific styling
+//page ids will need to change
+
+//social science and humanitites
+#schoolLanding.school-of-social-sciences-humanities{
+.full-width-hero{
+	.title:before{
+		content: " ";
+		height: 27px;
+		width: 100%;
+		margin-bottom: -63px;
+		display: block;
+		background-image: url(../img/schoolLanding/stroke661.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		@media(max-width: $bp_mobile_px){
+			content: "";
+			background: none;
+			display: none;
+		}
+
+	}
+	.title:after{
+		content: " ";
+		display: block;
+		height: 27px;
+		width: 100%;
+		background-image: url(../img/schoolLanding/stroke2.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin-top: -16px;
+		@media(max-width: $bp_mobile_px){
+			content: "";
+			background: none;
+			display: none;
+		}
+	}
+}
+.blockquote-section{
+	background-color: #ec693e;
+}
+.alumni-menu{
+	.alumni-slide{
+		.alumni-wrapper{
+			.alumni-aligner{
+				.alumni-content{
+					blockquote:before, blockquote:after{
+						color: #ec693e;
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+//school of applied sciences
+#schoolLanding.school-of-applied-sciences{
+.full-width-hero{
+	.title:before{
+		content: " ";
+		height: 27px;
+		width: 100%;
+		margin-bottom: -63px;
+		display: block;
+		background-image: url(../img/schoolLanding/stroke660.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		@media(max-width: $bp_mobile_px){
+			content: "";
+			background: none;
+			display: none;
+		}
+
+	}
+	.title:after{
+	}
+}
+.blockquote-section{
+	background-color: #754da8;
+}
+.alumni-menu{
+	.alumni-slide{
+		.alumni-wrapper{
+			.alumni-aligner{
+				.alumni-content{
+					blockquote:before, blockquote:after{
+						color: #754da8;
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+//school of design
+#schoolLanding.school-of-design{
+.full-width-hero{
+	.title:before{
+		content: " ";
+		height: 27px;
+		width: 100%;
+		margin-bottom: -63px;
+		display: block;
+		background-image: url(../img/schoolLanding/stroke444.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		@media(max-width: $bp_mobile_px){
+			content: "";
+			background: none;
+			display: none;
+		}
+	}
+	.title:after{
+	}
+}
+.blockquote-section{
+	background-color: #cb1a7e;
+}
+.alumni-menu{
+	.alumni-slide{
+		.alumni-wrapper{
+			.alumni-aligner{
+				.alumni-content{
+					blockquote:before, blockquote:after{
+						color: #cb1a7e;
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+
+//school of business
+#schoolLanding.school-of-business{
+	.full-width-hero{
+		.title:before{
+			content: " ";
+			height: 27px;
+			width: 100%;
+			margin-bottom: -63px;
+			display: block;
+			background-image: url(../img/schoolLanding/stroke483.svg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			@media(max-width: $bp_mobile_px){
+				content: "";
+				background: none;
+				display: none;
+			}
+		}
+		.title:after{
+		}
+	}
+	.blockquote-section{
+		background-color: #005b83;
+	}
+	.alumni-menu{
+		.alumni-slide{
+			.alumni-wrapper{
+				.alumni-aligner{
+					.alumni-content{
+						blockquote:before, blockquote:after{
+							color: #005b83;
+						}
+					}
+				}
+			}
+		}
+	}
+}

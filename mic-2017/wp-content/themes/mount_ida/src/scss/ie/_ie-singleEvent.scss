@@ -1,0 +1,95 @@
+.ie9{
+	        .breadcrumb {  
+            position: relative;
+            font-family: Montserrat;
+            font-weight: bold;
+            //@include column(9);
+            padding-left: $gutter*3;
+            font-size: $gutter/2;
+            a {
+                color: $mic-green;
+            }
+            span {
+                color: $medium-gray;
+                padding: 0 $gutter/2;
+                &:last-child {
+                    color: $black;
+                    padding: 0;
+                }
+            }
+            @media(max-width: $bp_mobile_px) {
+                display: none;
+            }
+        }
+	// body#singleEvent {     
+	//     section#events {
+	// 		.container{
+	// 			.event-title{
+	// 				text-align: center;
+	// 				margin: auto;
+	// 			}
+	// 			.social-share{
+	// 				text-align: center;
+	// 				margin: auto;
+	// 				padding: $gutter*2 0;
+	// 			}
+	// 		}
+	// 		.news-content {
+	// 		    p cite {
+	// 	            padding-bottom: 0;
+	// 	            @include heading-6;
+	// 	            text-align: center;
+	// 	            width: auto;
+	// 	            display: block;
+	// 	            @media(max-width: $bp_mobile_px) {
+	// 	                font-weight: bold;
+	// 	                font-size: 15px;
+	// 	                font-family: Montserrat;
+	// 	                line-height: 1.53;
+	// 	            }
+	// 		    }
+	// 		    .small {
+	// 		        margin-top: -$gutter*2;
+	// 		        padding-bottom: $gutter*3;
+	// 		        @include heading-6;
+	// 		        text-align: center;
+	// 		        color: $black;
+	// 		        width: auto;
+	// 		        display: block;
+	// 		    }
+	// 		    blockquote p {
+	// 		        @include column(10);
+	// 		        @include offset(2);
+	// 		        text-align: center;
+	// 		        color: $dark-gray;
+	// 		        font-size: 40px;
+	// 		        font-family: Georgia;
+	// 		        margin-bottom: $gutter/2;
+	// 		        margin: auto;
+	// 		        @media(max-width: $bp_mobile_px) {
+	// 		            margin: auto;
+	// 		            width: 100%;
+	// 		            font-size: 30px;
+	// 		        }
+	// 		        &:after,
+	// 		        &:before {
+	// 		            content: "\e909";
+	// 		            display: block;
+	// 		            @include font(normal, normal, normal, normal, 50px, 1 ,'icomoon' !important);
+	// 		            speak: none;
+	// 		            padding: $gutter*2;
+	// 		            color: $mic-green;
+	// 		            @media(max-width: $bp_mobile_px) {
+	// 		                font-size:50px;
+	// 		                line-height: 1;
+	// 		                font-family: 'icomoon' !important;
+	// 		            }
+	// 		        }
+	// 		        &:after {
+	// 		            transform: rotate(180deg);
+	// 		        }
+	// 		    }
+	// 		}
+	// 	}
+	// }
+}

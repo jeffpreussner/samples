@@ -1,0 +1,70 @@
+//custom timing functions
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+//animations
+@include keyframes(slideIn) {
+  from {
+    @include transform(translateY(-100%));
+  }
+  to {
+    @include transform(translateY(0%));
+  }
+}
+
+@include keyframes(slideOutTop) {
+  from {
+    @include transform(translateY(0%));
+  }
+
+  to {
+    @include transform(translateY(-100%));
+  }
+}
+
+@include keyframes(growIn) {
+  from {
+    @include transform(scaleY(0));
+  }
+
+  to {
+    @include transform(scaleY(1));
+  }
+}
+
+@include keyframes(bounce) {
+  from {
+    @include transform(translateY(0));
+  }
+
+  to {
+    @include transform(translateY(10px));
+  }
+}
+
+@include keyframes(inFromRight) {
+  from {
+    @include transform(translateX(100%));
+  }
+
+  to {
+    @include transform(translateX(0%));
+  }
+}
+
+@include keyframes(inFromBottom50){
+  from {
+    @include transform(translateY(50%));
+  }
+  to {
+    @include transform(translateY(0%));
+  }
+}
+
+@include keyframes(rotate360) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(359deg));
+  }
+}

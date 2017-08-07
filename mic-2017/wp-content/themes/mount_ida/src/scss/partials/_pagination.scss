@@ -1,0 +1,57 @@
+
+// NOTE: This pagination styling was based off of default WP pagination.
+// Pagination styles have been modified as a result of plugin specific pagination.
+
+@mixin mic-pagination {
+  nav.pagination {
+    @include margin(0 auto);
+    width: 300px;
+    ul {
+      li {
+        display: inline-block;
+        &.active {
+          a.page-numbers {
+            border: solid 2px $mic-green;
+            color: $white;
+            &:hover {
+              background-color: $mic-green;
+            }
+          }
+          background-color: $mic-green;
+        }
+        a {
+          &.page-numbers {
+            @include size(35px);
+            border: solid 2px #5db817;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $mic-green;
+            font-size: 14px !important;
+            @include bold-p;
+            &:hover {
+              color: $white;
+              background-color: $mic-light-green;
+            }
+          }
+          &.prev {
+            padding-right: 10px;
+            svg {
+              @include transform(rotate(-180deg));
+              margin-bottom: -3px;
+            }
+          }
+          &.next {
+            padding-left: 10px;
+            svg {
+              margin-bottom: -3px;
+            }
+          }
+        }
+        span.dots {
+          color: #9197a4;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@mixin add_animation($name, $duration:0, $ease:ease, $fill-mode:none, $iteration-count:1, $direction:normal, $delay:0s) {
+  @include animation-name($name);
+  @include animation-duration($duration);
+  @include animation-timing-function($ease);
+  @include animation-fill-mode($fill-mode);
+  @include animation-iteration-count($iteration-count);
+  @include animation-direction($direction);
+  @include animation-delay($delay);
+}
